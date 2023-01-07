@@ -1,4 +1,4 @@
-i#!/bin/python3
+#!/bin/python3
 def magic_calculation(a, b, c):
     """"Returns c if a < b
     returns a +b if !(a < b) and c >b
