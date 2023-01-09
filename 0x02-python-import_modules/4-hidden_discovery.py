@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 # 4-hidden_discovery.py
 
 if __name__ == "__main__":
