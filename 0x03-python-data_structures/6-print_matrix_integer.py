@@ -2,11 +2,11 @@
 # 6-print_matrix_integer.py
 
 def print_matrix_integer(matrix=[[]]):
-    """Print matrix containing int"""
-    for x in range(len(matrix)):
-        for y in range(len(matrix[x])):
-                print("{:d}".format(matrix[x][y]), end="")
-                if y != (len(matrix[x]) - 1):
-                    print(" ", end="")
-
-        print("")
+    """Prints a matrix of ints"""
+    for row in matrix:
+        for i in row:
+            if i != row[-1]:
+                print("{:d}".format(i), end="")
+            else:
+                print("{:d}".format(i), end="")
+        print()
