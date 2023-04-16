@@ -4,6 +4,6 @@
 // Write a script that prints 3 lines: (like 1-multi_languages.js) 
 // but by using an array of string and a loop
 
-for multiLanguage in ['C is fun', 'Python is cool', 'Javascript is amazing'] {
+for (let multiLanguage of ['C is fun', 'Python is cool', 'JavaScript is amazing'] {
 	console.log(multiLanguage);
 };
