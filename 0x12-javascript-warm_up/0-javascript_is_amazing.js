@@ -5,7 +5,7 @@
 //Write a script that prints "JavaScript is amazing";
 
 const myVar = 'JavaScript is amazing'; 
-//assigning a constant variable for a string
+// assigning a constant variable (const) for a string.
 
 console.log(myVar); 
-// printing the output in the console
+// printing the output in the console.
