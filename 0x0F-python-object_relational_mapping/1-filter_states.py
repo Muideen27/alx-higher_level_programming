@@ -6,7 +6,7 @@ Write a script that lists all states with a name starting with N (upper N) from 
 import MySQLdb
 import sys
 """
-Taking argument and connecting to MyQSL server, it executes the SELECT command to retreive rows form states and sort in ascending order 
+Taking argument and connecting to MyQSL server, it executes the SELECT command to retreive rows form states and sort in ascending order
 """
 if __name__ == '__main__':
     username, password, database = sys.argv[1:]
@@ -21,8 +21,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
-    for state in cur.fetchall():
-        print(state)
+    state = cur.fetchall()
 
-    cur.close()
-    db.close()
+    for row in state:
+        print(row)
