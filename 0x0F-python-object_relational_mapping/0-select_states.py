@@ -4,25 +4,24 @@ script that lists all states from the database hbtn_0e_0_usa
 Muideen27
 """
 import MySQLdb
-from sys import argv
+import sys
 
+if __name__ == '__main__':
+    username, password, database = sys.argv[1:]
 
-def print_states(username, password, db_name):
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=db_name, port=3306, charset="utf8")
-
+    db = MySQLdb.connect(
+            host='localhost',
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database
+        )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    data = cur.fetchall()
 
-    for row in data:
-        print(row)
+    cur.execute('SELECT * FROM states ORDER BY id ASC')
 
-        cur.close()
-        db.close()
+    for state in cur.fetchall():
+        print(state)
 
-if __name__ == "__main__":
-    credentials = argv
-    username = argv[1]
-    passwd = argv[2]
-    db_name = argv[3]
-    print_states(username, passwd, db_name)
+    cur.close()
+    db.close()
