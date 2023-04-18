@@ -2,13 +2,13 @@
 """
 script that lists all states from the database hbtn_0e_0_usa
 Muideen27
-
 """
 import MySQLdb
-import sys
+from sys import argv
 
-if __name__ == '__main__':
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3], host='localhost', port=3306)
+
+def print_states(username, password, db_name):
+    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=db_name, port=3306, charset="utf8")
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
@@ -17,5 +17,12 @@ if __name__ == '__main__':
     for row in data:
         print(row)
 
-        cur.closet()
+        cur.close()
         db.close()
+
+if __name__ == "__main__":
+    credentials = argv
+    username = argv[1]
+    passwd = argv[2]
+    db_name = argv[3]
+    print_states(username, passwd, db_name)
