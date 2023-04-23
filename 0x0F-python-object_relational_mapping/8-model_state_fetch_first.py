@@ -21,7 +21,4 @@ if __name__ == "__main__":
         if instance is None:
              print('Nothing')
         else:
-            print('{0}: {1}'.format(instance.id, instance.name))
-
-        except Exception as e:
-            print("An error occurred:", e)
+            print('{0}: {1}'.format(instance.id, instance.name)
