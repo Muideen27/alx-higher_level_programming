@@ -7,7 +7,7 @@ Write a script that takes in an argument and displays all values in the states t
 import MySQLdb
 import sys
 
-if __name__  == '__main__':
+if __name__ == '__main__':
 
     db_user = sys.argv[1]
 
@@ -18,7 +18,7 @@ if __name__  == '__main__':
     searched_name = sys.argv[4]
 
 
-    ''' connecting to database'''
+    ''' connecting to database '''
     db = MySQL.connect(host="localhost", 
                         user=db_user, 
                         passwd=db_password, 
