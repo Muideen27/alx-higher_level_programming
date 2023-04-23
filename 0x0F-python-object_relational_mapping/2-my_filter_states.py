@@ -15,8 +15,6 @@ if __name__ == '__main__':
 
     db_name = sys.argv[3]
 
-    searched_name = sys.argv[4]
-
 
     ''' connecting to database '''
     db = MySQL.connect(host="localhost", 
@@ -28,11 +26,8 @@ if __name__ == '__main__':
     c = db.cursor()
 
     c.execute("SELECT * FROM states WHERE name LIKE '{:s}' "
-                    "ORDER BY id ASC".format(searched_name))
+                    "ORDER BY id ASC".format(argv[4]))
 
     rows = c.fetchall()
     for row in rows:
-        if row[1] == searched_name:
-            print(row)
-    c.close()
-    db.close()
+        print(row)
