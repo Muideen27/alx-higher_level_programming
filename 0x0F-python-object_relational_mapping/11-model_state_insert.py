@@ -4,7 +4,6 @@
 This script adds the State object
 `Louisiana` to the database `hbtn_0e_6_usa`.
 """
-
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
@@ -16,9 +15,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-lou_state = State(name='Louisiana')
-session.add(lou_state)
-session.commit()
-print('{0}'.format(lou_state.id))
-                
-session.close()
+    lou_state = State(name='Louisiana')
+    session.add(lou_state)
+    session.commit()
+    print('{0}'.format(lou_state.id))
