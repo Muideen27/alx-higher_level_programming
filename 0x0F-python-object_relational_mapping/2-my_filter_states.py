@@ -5,28 +5,22 @@ Write a script that takes in an argument and displays all values in the states t
 '''
 
 import MySQLdb
-import sys
+from sys import argv
 
 if __name__ == '__main__':
 
-    db_user = sys.argv[1]
-
-    db_password = sys.argv[2]
-
-    db_name = sys.argv[3]
-
-
     ''' connecting to database '''
     db = MySQL.connect(host="localhost", 
-                        user=db_user, 
-                        passwd=db_password, 
-                        db=db_name
+                        user=argv[1], 
+                        passwd=argv[2], 
+                        db=argv[3],
+                        port=3306
                    )
 
     c = db.cursor()
 
-    c.execute("SELECT * FROM states WHERE name LIKE '{:s}' "
-                    "ORDER BY id ASC".format(argv[4]))
+    c.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' "
+                    "ORDER BY states.id ASC".format(argv[4]))
 
     rows = c.fetchall()
     for row in rows:
