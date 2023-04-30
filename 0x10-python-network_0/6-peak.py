@@ -4,13 +4,8 @@ Function that finds the peak in a list of unsorted integers
 '''
 
 
-def find_peak(listint):
+def find_peak(list_of_integers):
     ''' Function that returns peak value in a list '''
-    if listint:
-        x = listint[0]
-        for i in listint:
-            if i > x:
-                x = i
-        return x
-    else:
-        return None
+    if list_of_integers:
+        list_of_integers.sort(reverse=True)
+        return list_of_integers[0]
