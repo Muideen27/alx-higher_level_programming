@@ -4,6 +4,9 @@
 // Write a script that prints 3 lines: (like 1-multi_languages.js)
 // but by using an array of string and a loop
 
-for (let multiLanguage of ['C is fun', 'Python is cool', 'JavaScript is amazing']) {
-console.log(multiLanguage);
-};
+const lines = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+let i = 0;
+while (i < 3) {
+  console.log(lines[i]);
+  i++;
+}
