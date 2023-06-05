@@ -13,4 +13,4 @@ console.log('No argument');
 console.log('Argument found');
 } else {
 console.log('Arguments found');
-};
+}
